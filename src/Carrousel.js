@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import "./styles.css";
+import image1 from './image1.jpg';
+import image2 from './image2.jpg';
+import image3 from './image3.jpg';
+import image4 from './image4.jpg';
 
 
 // this array holds the data for the carousel
@@ -7,22 +11,22 @@ const photos = [
   {
     id: 'p1',
     title: 'Photo One',
-    url: './image1.jpg',
+    url: {image1},
   },
   {
     id: 'p2',
     title: 'Photo Two',
-    url: './image2.jpg',
+    url: {image2},
   },
   {
     id: 'p3',
     title: 'Photo Three',
-    url: './image3.jpg',
+    url: {image3},
   },
   {
     id: 'p4',
     title: 'Photo Four',
-    url: './image4.jpg',
+    url: {image4},
   },
 ];
 
