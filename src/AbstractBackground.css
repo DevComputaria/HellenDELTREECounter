@@ -1,0 +1,26 @@
+.abstract-background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure it's in the background */
+  overflow: hidden; /* Hide shapes that move off-screen */
+}
+
+.abstract-shape {
+  position: absolute; /* Crucial for positioning */
+  opacity: 0.7;
+  transition: left 0.5s ease-out, top 0.5s ease-out; /* Smooth transitions for movement */
+}
+
+.abstract-shape.circle {
+  background-color: #61dafb; /* Example color */
+  border-radius: 50%;
+}
+
+.abstract-shape.square {
+  background-color: #ff69b4; /* Example color */
+}
+
+/* Add more shapes or variations as needed */
