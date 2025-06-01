@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/YourProjectRepositoryName/static/css/main.aa3494ed.css",
-    "main.js": "/YourProjectRepositoryName/static/js/main.7ab0b950.js",
-    "static/js/787.3640bd65.chunk.js": "/YourProjectRepositoryName/static/js/787.3640bd65.chunk.js",
-    "static/media/image5.jpg": "/YourProjectRepositoryName/static/media/image5.73f0037df137881cd783.jpg",
-    "index.html": "/YourProjectRepositoryName/index.html",
-    "main.aa3494ed.css.map": "/YourProjectRepositoryName/static/css/main.aa3494ed.css.map",
-    "main.7ab0b950.js.map": "/YourProjectRepositoryName/static/js/main.7ab0b950.js.map",
-    "787.3640bd65.chunk.js.map": "/YourProjectRepositoryName/static/js/787.3640bd65.chunk.js.map"
+    "main.css": "/HellenDELTREECounter/static/css/main.aa3494ed.css",
+    "main.js": "/HellenDELTREECounter/static/js/main.fbd8d393.js",
+    "static/js/787.3640bd65.chunk.js": "/HellenDELTREECounter/static/js/787.3640bd65.chunk.js",
+    "static/media/image5.jpg": "/HellenDELTREECounter/static/media/image5.73f0037df137881cd783.jpg",
+    "index.html": "/HellenDELTREECounter/index.html",
+    "main.aa3494ed.css.map": "/HellenDELTREECounter/static/css/main.aa3494ed.css.map",
+    "main.fbd8d393.js.map": "/HellenDELTREECounter/static/js/main.fbd8d393.js.map",
+    "787.3640bd65.chunk.js.map": "/HellenDELTREECounter/static/js/787.3640bd65.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aa3494ed.css",
-    "static/js/main.7ab0b950.js"
+    "static/js/main.fbd8d393.js"
   ]
 }
