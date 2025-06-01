@@ -1,22 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./styles.css";
-import Count from "./Count";
-import Carrousel  from "./Carrousel";
+import ReactDOM from "react-dom/client"; // Updated import for React 18
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// Removed: import "./styles.css"; (file deleted)
+// Removed: import Count from "./Count"; (Count is rendered within App)
+// Removed: import Carrousel  from "./Carrousel"; (file deleted)
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <h1>Countdown Timer</h1>
-//       <Carrousel />
-//       <Count />
-//     </div>
-//   );
-// }
-
-// ReactDOM.render(<App />, document.getElementById("root"));
+// The main App component now handles all primary rendering.
+// Older commented-out code referencing a local App function,
+// Carrousel, and Count directly here has been removed for clarity.
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
