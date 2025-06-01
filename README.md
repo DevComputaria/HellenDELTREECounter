@@ -1,8 +1,8 @@
 # Projeto de Homenagem com Animação Interativa
 
-[![Deploy to GitHub Pages](https://github.com/YourGitHubUsername/YourProjectRepositoryName/actions/workflows/deploy.yml/badge.svg)](https://github.com/YourGitHubUsername/YourProjectRepositoryName/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/devcomputaria/HellenDELTREECounter/actions/workflows/deploy.yml/badge.svg)](https://github.com/devcomputaria/HellenDELTREECounter/actions/workflows/deploy.yml)
 
-**[View Live Application](https://YourGitHubUsername.github.io/YourProjectRepositoryName/)**
+**[View Live Application](https://devcomputaria.github.io/HellenDELTREECounter/)**
 
 ## Em Memória de Hellen DELTREE (EscravOps)
 
