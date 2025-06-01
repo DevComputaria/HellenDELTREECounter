@@ -1,5 +1,9 @@
 # Projeto de Homenagem com Animação Interativa
 
+[![Deploy to GitHub Pages](https://github.com/YourGitHubUsername/YourProjectRepositoryName/actions/workflows/deploy.yml/badge.svg)](https://github.com/YourGitHubUsername/YourProjectRepositoryName/actions/workflows/deploy.yml)
+
+**[View Live Application](https://YourGitHubUsername.github.io/YourProjectRepositoryName/)**
+
 ## Em Memória de Hellen DELTREE (EscravOps)
 
 Este projeto é uma singela homenagem à Hellen DELTREE, nossa eterna EscravOps. Sua paixão, conhecimento e espírito colaborativo deixaram uma marca indelével em todos nós. Que este espaço sirva como uma pequena lembrança de seu impacto e da saudade que sentimos.
