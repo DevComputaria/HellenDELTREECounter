@@ -1,5 +1,5 @@
 import React from 'react';
-import image5 from '../image5.jpg';
+import image5 from './image5.jpg'; // Corrected path
 import './MainImage.css'; // Optional: if specific styles are needed
 
 function MainImage() {
