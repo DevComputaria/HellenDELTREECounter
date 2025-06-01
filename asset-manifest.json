@@ -1,20 +1,16 @@
 {
   "files": {
-    "main.css": "/HellenDELTREECounter/static/css/main.f56a251e.css",
-    "main.js": "/HellenDELTREECounter/static/js/main.fd6aa8c8.js",
-    "static/js/787.3640bd65.chunk.js": "/HellenDELTREECounter/static/js/787.3640bd65.chunk.js",
-    "static/media/image4.jpg": "/HellenDELTREECounter/static/media/image4.a779a0631882a5082483.jpg",
-    "static/media/image5.jpg": "/HellenDELTREECounter/static/media/image5.73f0037df137881cd783.jpg",
-    "static/media/image1.jpg": "/HellenDELTREECounter/static/media/image1.731585117c5b436eb2eb.jpg",
-    "static/media/image3.jpg": "/HellenDELTREECounter/static/media/image3.0ccd1bb174c9520c4580.jpg",
-    "static/media/image2.jpg": "/HellenDELTREECounter/static/media/image2.d7822c72dc9bd957e54b.jpg",
-    "index.html": "/HellenDELTREECounter/index.html",
-    "main.f56a251e.css.map": "/HellenDELTREECounter/static/css/main.f56a251e.css.map",
-    "main.fd6aa8c8.js.map": "/HellenDELTREECounter/static/js/main.fd6aa8c8.js.map",
-    "787.3640bd65.chunk.js.map": "/HellenDELTREECounter/static/js/787.3640bd65.chunk.js.map"
+    "main.css": "/YourProjectRepositoryName/static/css/main.aa3494ed.css",
+    "main.js": "/YourProjectRepositoryName/static/js/main.7ab0b950.js",
+    "static/js/787.3640bd65.chunk.js": "/YourProjectRepositoryName/static/js/787.3640bd65.chunk.js",
+    "static/media/image5.jpg": "/YourProjectRepositoryName/static/media/image5.73f0037df137881cd783.jpg",
+    "index.html": "/YourProjectRepositoryName/index.html",
+    "main.aa3494ed.css.map": "/YourProjectRepositoryName/static/css/main.aa3494ed.css.map",
+    "main.7ab0b950.js.map": "/YourProjectRepositoryName/static/js/main.7ab0b950.js.map",
+    "787.3640bd65.chunk.js.map": "/YourProjectRepositoryName/static/js/787.3640bd65.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f56a251e.css",
-    "static/js/main.fd6aa8c8.js"
+    "static/css/main.aa3494ed.css",
+    "static/js/main.7ab0b950.js"
   ]
 }
