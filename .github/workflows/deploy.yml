@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Or master, or your default branch
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Specify your Node.js version
+
+      - name: Install dependencies
+        run: npm ci # Using ci for cleaner installs, or npm install
+
+      - name: Build application
+        run: npm run build
+        # Ensure your package.json's homepage field is set correctly
+        # e.g., "homepage": "https://<username>.github.io/<repository-name>"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build # Or your build output directory
+          # user_name: 'github-actions[bot]' # Optional: custom committer name
+          # user_email: 'github-actions[bot]@users.noreply.github.com' # Optional: custom committer email
+          # commit_message: 'Deploy to GitHub Pages' # Optional: custom commit message
