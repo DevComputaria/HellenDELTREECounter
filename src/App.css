@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: transparent; /* Let AbstractBackground show through */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,12 +22,18 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: relative; /* Establish stacking context for children if needed */
+  z-index: 1; /* Ensure header content is above background */
 }
 
-.App-link {
-  color: #61dafb;
+.App-header h1 {
+  font-size: calc(20px + 4vmin); /* Larger font for the main title */
+  margin: 20px 0; /* Add some vertical spacing */
+  padding: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Enhanced text shadow for legibility */
+  z-index: 2; /* Ensure title is above other direct children of App-header if any confusion */
+  position: relative; /* For z-index to apply reliably */
 }
-
 
 img {
   display: inline-block;
@@ -35,8 +41,110 @@ img {
   height: auto;
 }
 
-@media (max-width: 600px) {
-img {
-  width: 100%; 
+/* Responsive Adjustments */
+/* The (max-width: 600px) rule for general img is removed to allow more specific .App-logo handling */
+
+@media (max-width: 768px) {
+  .App-logo {
+    height: 40vmin; /* Slightly reduce image size */
+    width: auto; /* Ensure width adjusts if height is the primary control */
+  }
+
+  .App-header h1 {
+    font-size: calc(18px + 3.5vmin); /* Adjust title font size */
+  }
+
+  .countdown-item {
+    font-size: calc(16px + 2.5vmin); /* Adjust counter item font size */
+    margin: 5px 8px;
+  }
+
+  .countdown-label {
+    font-size: calc(7px + 1.2vmin); /* Adjust counter label font size */
+  }
+
+  .countdown-text {
+    font-size: calc(9px + 0.8vmin);
+  }
+
+  .countdown-container {
+    padding: 15px;
+  }
 }
+
+@media (max-width: 600px) { /* Add specific rules for .App-logo at 600px if needed */
+  .App-logo {
+    height: 35vmin; /* Example: Adjust height specifically for this breakpoint */
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-logo {
+    width: 80%; /* Make image take most of the width */
+    height: auto; /* Let width control the aspect ratio */
+    max-height: 40vh; /* Prevent image from being excessively tall */
+  }
+
+  .App-header {
+    padding-top: 20px; /* Add some padding at the top */
+    padding-bottom: 20px;
+  }
+
+  .App-header h1 {
+    font-size: calc(16px + 3vmin); /* Further adjust title font size */
+    margin: 15px 0;
+  }
+
+  .countdown-container {
+    width: 90%; /* Make counter container take more width */
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  .countdown-item {
+    display: block; /* Stack counter items vertically */
+    font-size: calc(18px + 2vmin); /* Adjust font size for vertical stack */
+    margin: 8px 0; /* Adjust margins for vertical stack */
+  }
+
+  .countdown-label {
+    font-size: calc(8px + 1vmin); /* Adjust label font size for vertical stack */
+  }
+
+  .countdown-text {
+    font-size: calc(10px + 0.5vmin);
+  }
+}
+
+/* Styles for the Countdown Timer */
+.countdown-container {
+  margin-top: 20px; /* Add some space above the counter */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  border-radius: 10px;
+  display: inline-block; /* To fit content width */
+  z-index: 10; /* Ensure it's above the abstract background */
+  position: relative; /* Needed for z-index to take effect */
+}
+
+.countdown-item {
+  font-size: calc(18px + 3vmin); /* Larger font size for numbers */
+  color: #FFFFFF; /* White text */
+  margin: 5px 10px;
+  display: inline-block; /* Arrange items in a row if space allows, or wrap */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for legibility */
+}
+
+.countdown-label {
+  font-size: calc(8px + 1.5vmin); /* Smaller font size for labels like "Dias", "Horas" */
+  color: #DDDDDD; /* Lighter gray for labels */
+  display: block; /* Labels below the numbers */
+}
+
+.countdown-text {
+  font-size: calc(10px + 1vmin);
+  color: #EAEAEA;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }

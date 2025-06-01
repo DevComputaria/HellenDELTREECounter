@@ -1,19 +1,17 @@
 import './App.css';
-import logo from './image5.jpg';
+import MainImage from './MainImage';
 import Count from "./Count";
-import Slideshow from './Slideshow';
-import Carrousel  from "./Carrousel";
+import AbstractBackground from './AbstractBackground'; // Import the new component
 
 function App() {
 
 
   return (
     <div className="App">
+      <AbstractBackground /> {/* Add the background component */}
       <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+      <MainImage />
       <h1>Estamos Contando</h1>
-      {/* <Carrousel /> */}
-      {/* <Slideshow  images={images}/> */}
       <Count />
       </header>
     </div>

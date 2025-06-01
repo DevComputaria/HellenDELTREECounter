@@ -10,16 +10,14 @@ const Clock = () => {
       const now = new Date().getTime();
       const difference = targetDate - now;
 
-    //   if (difference <= 0) {
-    //     clearInterval(timer);
-    //   } else {
-        const seconds = Math.floor((difference / 1000) % 60);
-        const minutes = Math.floor((difference / 1000 / 60) % 60);
-        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      // The countdown continues even if the target date is passed, showing negative values.
+      // Original logic to stop at zero was commented out and has been removed.
+      const seconds = Math.floor((difference / 1000) % 60);
+      const minutes = Math.floor((difference / 1000 / 60) % 60);
+      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 
-        setCount({ days, hours, minutes, seconds });
-      //}
+      setCount({ days, hours, minutes, seconds });
     }, 1000);
 
     return () => {
@@ -28,16 +26,16 @@ const Clock = () => {
   }, []);
 
   return (
-    <div>      
-      <div className="App">Estamos a </div>
-      <div className="App">{count.days} Dias</div>
-      <div className="App">{count.hours} Horas</div>
-      <div className="App">{count.minutes} Minutos</div>
-      <div className="App">{count.seconds} Segundos</div>
-      <div className="App">sem a EscravOps Hellen DELTREE</div>
+    <div className="countdown-container">
+      <div className="countdown-text">Estamos a </div>
+      <div className="countdown-item">{count.days} <span className="countdown-label">Dias</span></div>
+      <div className="countdown-item">{count.hours} <span className="countdown-label">Horas</span></div>
+      <div className="countdown-item">{count.minutes} <span className="countdown-label">Minutos</span></div>
+      <div className="countdown-item">{count.seconds} <span className="countdown-label">Segundos</span></div>
+      <div className="countdown-text">sem a EscravOps Hellen DELTREE</div>
     </div>
-    
-    
+
+
   );
 };
 
