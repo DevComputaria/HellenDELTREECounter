@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/HellenDELTREECounter/static/css/main.57f0e3e0.css",
+    "main.css": "/HellenDELTREECounter/static/css/main.a97ef3b0.css",
     "main.js": "/HellenDELTREECounter/static/js/main.71ae2aff.js",
     "static/js/787.3640bd65.chunk.js": "/HellenDELTREECounter/static/js/787.3640bd65.chunk.js",
     "static/media/image5.jpg": "/HellenDELTREECounter/static/media/image5.73f0037df137881cd783.jpg",
     "index.html": "/HellenDELTREECounter/index.html",
-    "main.57f0e3e0.css.map": "/HellenDELTREECounter/static/css/main.57f0e3e0.css.map",
+    "main.a97ef3b0.css.map": "/HellenDELTREECounter/static/css/main.a97ef3b0.css.map",
     "main.71ae2aff.js.map": "/HellenDELTREECounter/static/js/main.71ae2aff.js.map",
     "787.3640bd65.chunk.js.map": "/HellenDELTREECounter/static/js/787.3640bd65.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.57f0e3e0.css",
+    "static/css/main.a97ef3b0.css",
     "static/js/main.71ae2aff.js"
   ]
 }
