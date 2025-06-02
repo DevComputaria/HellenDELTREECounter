@@ -5,6 +5,8 @@
 .App-logo {
   height: 50vmin;  
   pointer-events: none;
+  border-radius: 25px; /* Added for rounded corners */
+  box-shadow: 0 0 20px 8px rgba(0, 150, 255, 0.6); /* Added for bluish glow */
 }
 
 @media (prefers-reduced-motion: no-preference) {

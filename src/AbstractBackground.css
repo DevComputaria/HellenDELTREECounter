@@ -6,21 +6,30 @@
   height: 100%;
   z-index: -1; /* Ensure it's in the background */
   overflow: hidden; /* Hide shapes that move off-screen */
+  pointer-events: none; /* Allow clicks to pass through */
 }
 
-.abstract-shape {
-  position: absolute; /* Crucial for positioning */
-  opacity: 0.7;
-  transition: left 0.5s ease-out, top 0.5s ease-out; /* Smooth transitions for movement */
+.particle {
+  position: absolute;
+  border-radius: 50%; /* Make particles circular */
+  transition: transform 0.1s ease-out; /* Smoothness for mouse follow */
+  /* Glow effect - using a fairly generic light blue/white glow */
+  box-shadow: 0 0 8px 2px rgba(173, 216, 230, 0.7); /* Light blue glow (similar to lightblue) */
+  /* Example of a subtle ambient animation:
+  animation: pulseOpacity 5s infinite ease-in-out alternate;
+  */
 }
 
-.abstract-shape.circle {
-  background-color: #61dafb; /* Example color */
-  border-radius: 50%;
+/* Optional: Keyframes for ambient animation */
+/*
+@keyframes pulseOpacity {
+  0% {
+    opacity: 0.4; // Base opacity might need to be set via JS then
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
+*/
 
-.abstract-shape.square {
-  background-color: #ff69b4; /* Example color */
-}
-
-/* Add more shapes or variations as needed */
+/* Old styles for .abstract-shape, .circle, .square are removed */

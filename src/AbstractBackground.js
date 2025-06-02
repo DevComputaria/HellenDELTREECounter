@@ -1,48 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './AbstractBackground.css';
 
-const AbstractBackground = () => {
-  const [shapes, setShapes] = useState([
-    { id: 1, type: 'circle', x: 50, y: 100, size: 30, factor: 0.02 },
-    { id: 2, type: 'square', x: 150, y: 200, size: 40, factor: 0.03 },
-    { id: 3, type: 'circle', x: 250, y: 50, size: 20, factor: 0.01 },
-  ]);
+const PARTICLE_COUNT = 75;
+const COLOR_PALETTE = ['#7DF9FF', '#ADD8E6', '#FFFFFF', '#E0FFFF', '#B0E0E6']; // Light blues and white
 
-  const handleMouseMove = (event) => {
+const AbstractBackground = () => {
+  const [particles, setParticles] = useState([]);
+  // Store transforms separately to optimize re-renders if particle data itself doesn't change
+  const [transforms, setTransforms] = useState(Array(PARTICLE_COUNT).fill('translate(0px, 0px)'));
+
+  // Generate initial particles
+  useEffect(() => {
+    const newParticles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      newParticles.push({
+        id: i,
+        x: Math.random() * 100, // Percentage based
+        y: Math.random() * 100, // Percentage based
+        size: Math.random() * 6 + 2, // 2px to 8px
+        color: COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)],
+        opacity: Math.random() * 0.5 + 0.3, // 0.3 to 0.8
+        factorX: (Math.random() - 0.5) * 0.1 + 0.01, // Small random factor, can be negative
+        factorY: (Math.random() - 0.5) * 0.1 + 0.01, // Small random factor, can be negative
+      });
+    }
+    setParticles(newParticles);
+  }, []); // Empty dependency array ensures this runs only once on mount
+
+  const handleMouseMove = useCallback((event) => {
     const { clientX, clientY } = event;
-    setShapes(prevShapes =>
-      prevShapes.map(shape => ({
-        ...shape,
-        // Calculate new positions with a subtle parallax effect
-        // Ensuring the movement is relative to the center of the screen for better effect
-        x: shape.x + (clientX - window.innerWidth / 2) * shape.factor,
-        y: shape.y + (clientY - window.innerHeight / 2) * shape.factor,
-      }))
-    );
-  };
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    const newTransforms = particles.map(p => {
+      const offsetX = (clientX - centerX) * p.factorX;
+      const offsetY = (clientY - centerY) * p.factorY;
+      return `translate(${offsetX}px, ${offsetY}px)`;
+    });
+    setTransforms(newTransforms);
+  }, [particles]); // Recreate if particles array changes (though it shouldn't after init)
 
   useEffect(() => {
-    // The shapes will drift from their initial positions based on mouse movement.
-    // If a reset to initial positions on unmount or under certain conditions
-    // were desired, the initial positions would need to be stored and used here.
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []); // Empty dependency array means this effect runs once on mount and cleanup on unmount
+  }, [handleMouseMove]);
 
   return (
     <div className="abstract-background-container">
-      {shapes.map(shape => (
+      {particles.map((particle, index) => (
         <div
-          key={shape.id}
-          className={`abstract-shape ${shape.type}`}
+          key={particle.id}
+          className="particle"
           style={{
-            width: `${shape.size}px`,
-            height: `${shape.size}px`,
-            left: `${shape.x}px`,
-            top: `${shape.y}px`,
-            // Add other dynamic styles if needed
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+            backgroundColor: particle.color,
+            opacity: particle.opacity,
+            transform: transforms[index],
+            // Consider adding a subtle CSS animation for ambient movement/opacity pulsing
           }}
         />
       ))}
